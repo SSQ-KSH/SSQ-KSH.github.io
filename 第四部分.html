@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/index.css">
+  <title>第四部分</title>
+  <script  src="./js/echarts.js"></script>
+  <script  type="text/javascript" src="./js/index.js"></script>
+</head>
+<body>
+
+  <div class="two" style="background-color: rgba(91,92,110,1);align-items: center;position: relative;height: 600px;">
+    <img style="position: absolute; left: 15px;top:160px;width:250px;height: 250px;" src="./images/花样滑冰.png" alt="" srcset="">
+    <div class="three_c"> 
+      <div class="three_d" id="main_d" style="width: 700px;height:400px;position: absolute;left: 150px;top: 150px;"></div> 
+      <div id="main_d" style="width: 600px;height:400px;position: absolute;left: 150px;top: 30px;">
+        <div style="background-color: rgba(91,92,110,1);width: 320px;height: 70px;position: absolute;left: 200px;top: 30px;">
+          <p style="position: absolute;left: 30px;top: 20px;font-style: normal;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;color:  #fdfbfb;font-weight: bolder;font-size:20px;">北京冬奥会比赛项目、场馆分布</p>
+          <p style="position: absolute;left: 87px;top: 50px;color: #fafafd;font-style: italic;font-size: 10px;">数据来源：搜狗百科</p>
+        </div>
+      </div>
+    <script type="text/javascript">
+      // 基于准备好的dom，初始化echarts实例
+      var myChart = echarts.init(document.getElementById('main_d'));
+
+      // 指定图表的配置项和数据
+      var option = {
+        "color": [
+        "#91d6eb",
+        "#c48cb5",
+        "#9d8dbc",
+      ],
+     
+
+  tooltip: {
+    trigger: 'item',
+    formatter: '{a} <br/>{b}: {c} ({d}%)'
+  },
+  legend: {
+    textStyle: {
+      top: 'bottom',
+      color: "rgba(255, 255, 255, 1)"
+    },
+    data: [
+      '北京赛区',
+      '延庆赛区',
+      '张家口赛区',
+      
+    ],
+    top:0,
+  },
+  toolbox: {
+        top:0,
+        right:60,
+        iconStyle: {
+         
+         borderColor: "#83838a",
+       },
+       show: true,
+        feature: {
+          dataView: { show: true, readOnly: false },
+          magicType: { show: true, type: ['line', 'bar'] },
+          restore: { show: true },
+          saveAsImage: { show: true }
+        }
+    
+      },
+  series: [
+    {
+      
+      type: 'pie',
+      selectedMode: 'single',
+      radius: [0, '20%'],
+      label: {
+        position: 'inner',
+        fontSize: 14
+      },
+      labelLine: {
+        show: false
+      },
+      data: [
+        { value: 53, name: '张家口赛区' },
+        { value: 35, name: '北京赛区' },
+        { value: 21, name: '延庆赛区', selected: true }
+      ]
+    },
+    {
+      name: '北京赛区',
+      type: 'pie',
+      radius: ['45%', '60%'],
+      labelLine: {
+        length: 30
+      },
+      
+      
+      data: [
+        { value: 11, name: '冬季两项:11' },
+        { value: 3, name: '北欧两项:3' },
+        { value: 11, name: '自由式滑雪:11' },
+        { value: 9, name: '单板滑雪:9' },
+        { value: 12, name: '越野滑雪:12' },
+        { value: 5, name: '跳台滑雪:5' },
+        { value: 2, name: '冰球:2' },
+        { value: 2, name: '单板滑雪大跳台:2' },
+        { value: 2, name: '自由式滑雪大跳台:2' },
+        { value: 3, name: '冰壶:3' },
+        { value: 28, name: '滑冰:28' },
+        { value: 4, name: '雪车:4' },
+        { value: 4, name: '雪橇:4' },
+        { value: 11, name: '高山滑雪:11' },
+        { value: 2, name: '钢架雪车:2' },
+      ]
+    }
+  ]
+};
+
+      // 使用刚指定的配置项和数据显示图表。
+      myChart.setOption(option);
+    </script> 
+    </div>
+    
+
+
+    <div class="three_c"> 
+      <div class="three_d" id="main_c" style="width: 700px;height:450px;position: absolute;left: 750px;top:80px;"></div>  
+      
+    </div>
+    
+  </div>
+    <script>
+      echart_3()
+      function echart_3 () {
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main_c'));
+    // 指定图表的配置项和数据
+    option = {
+      "color": [
+        "#9b8bba",
+        "#e098c7",
+        "#8fd3e8",
+        "#71669e",
+        "#cc70af",
+        "#7cb4cc",
+        "#fffdfd",
+        
+    ],
+
+
+      title: {
+        text: '观众对冬奥会项目的喜爱度',
+        textStyle: {
+      fontSize: 20,
+      color: "rgba(255, 255, 255, 1)"
+    },
+        subtext: '数据来源：网易新闻',
+        left:'center',
+        top:0,
+        right:200,
+        subtextStyle:{
+                color: "rgba(255, 255, 255, 1)",
+                fontStyle: "italic",
+                textVerticalAlign: "middle",
+                
+        },
+      },
+
+      legend: {
+        textStyle: {
+      color: "rgba(255, 255, 255, 1)"
+    },
+        top: 'bottom'
+      },
+      toolbox: {
+        top:60,
+        right:80,
+        iconStyle: {
+         
+         borderColor: "#83838a",
+       },
+        show: true,
+        feature: {
+          dataView: { show: true, readOnly: false },
+          magicType: { show: true, type: ['line', 'bar'] },
+          restore: { show: true },
+          saveAsImage: { show: true }
+        }
+      },
+      series: [
+        {
+          name: 'Nightingale Chart',
+          type: 'pie',
+          radius: [10, 150],
+          center: ['50%', '50%'],
+          roseType: 'area',
+          itemStyle: {
+            borderRadius: 7
+          },
+          data: [
+            { value: 94112770, name: '冰球' },
+            { value: 65192120, name: '短道速滑' },
+            { value: 49660780, name: '花样滑冰' },
+            { value: 16844830, name: '速度滑冰' },
+            { value: 15204510, name: '冰壶' },
+            { value: 14156040, name: '高山滑雪' },
+            { value: 4336960, name: '雪橇' }
+          ]
+        }
+      ]
+    };
+     // 使用刚指定的配置项和数据显示图表。
+     myChart.setOption(option);
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/index.css">
+  <title>第三部分</title>
+  <script  src="./js/echarts.js"></script>
+  <script  type="text/javascript" src="./js/index.js"></script>
+</head>
+<body>
+  <!-- 第三部分 -->
+  <div class="two" style="position:relative;">
+    <div class="two_a" id="main_b" style="width:1200px;height:550px;position: absolute;left:-40px;top: 20px;"></div>
+    <div class="two_b" style="position: absolute;left: 1100px;top: 20px;" >
+      <p>北京冬奥会我国金牌数首</p>
+      <p>次进入金牌榜前三，数据</p>
+      <p>来源为百度百科</p>
+    </div>
+    <img style="position: absolute; right:30px;top: 260px;width: 300px;height: 300px;" src="./images/雪橇成图.png" alt="" srcset="">
+  </div>
+  <script>
+    echart_2()
+        function echart_2 () {
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main_b'));
+
+    option = {
+      "color": [
+        "#91d6eb",
+        "#c48cb5",
+        "#9d8dbc",
+      ],
+
+      
+      title: {
+        text: '北京冬奥会奖牌榜',
+        left: "center",
+         textStyle: {
+          fontSize: 30,
+          color:"#ffffff",
+         },
+         subtext: '数据来源：搜狗百科',
+         subtextStyle:{
+                color:"#aeaeb3",
+                lineHeight:20,
+                width:180,
+                fontStyle: "italic",
+                overflow:"break",
+          },
+        
+         
+      },
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'shadow'
+        }
+      },
+      toolbox: {
+        top:20,
+        right:50,
+        iconStyle: {
+         
+          borderColor: "#83838a",
+        },
+        show: true,
+        feature: {
+          dataView: { show: true, readOnly: false },
+          magicType: { show: true, type: ['line', 'bar'] },
+          restore: { show: true },
+          saveAsImage: { show: true }
+        }
+      },
+      legend: {
+        top: 'bottom'
+      },
+      grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+      },
+      xAxis: {
+        axisLine:{
+          LineStyle:{
+            color:"#b8b8bb"
+          },
+        },
+        axisLabel: {
+          show: true,
+          color: '#b8b8bb',
+          fontSize: 16
+        },
+        type: 'value',
+        boundaryGap: [0, 0.01]
+      },
+      yAxis: {
+        axisLine:{
+          LineStyle:{
+            color:"#b8b8bb"
+          },
+        },
+        axisLabel: {
+          show: true,
+          color: '#b8b8bb',
+          fontSize: 16
+        },
+        type: 'category',
+        data: ['挪威', '德国', '中国',  '美国', '瑞典', '荷兰','奥地利', '瑞士', '俄罗斯奥委会', '法国']
+      },
+      series: [
+        {
+          name: '金牌',
+          type: 'bar',
+          data: [16,12,9,8,8,8,7,7,6,5]
+        },
+        {
+          name: '银牌',
+          type: 'bar',
+          data: [8,10,4,10,5,5,7,2,12,7]
+        },
+        {
+          name: '铜牌',
+          type: 'bar',
+          data: [13,5,2,7,5,4,4,5,14,2]
+        },
+      ]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+}
+
+  </script>
+</body>
+</html>

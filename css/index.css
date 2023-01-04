@@ -1,0 +1,383 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+
+.one_a{
+  
+  margin-left: 40px;
+  margin-right: 40px;
+
+  height: 500px;
+  background-color: rgb(91, 92, 110);
+  color: white;
+  margin-bottom: 40px;
+}
+.img-responsive{
+  margin-left: 100px;
+  width: 200px;
+  height: 400px;
+}
+.one_b{
+  margin-left: 100px;
+  margin-right: 100px;
+  font-size: 18px;
+}
+.one_c{
+  text-align: center;
+  font-size: 24px;
+  color: rgb(105, 105, 105);
+  font-weight: 600;
+  margin-top: 20px;
+}
+.one_d{
+  margin-top: 300px;
+  text-indent: 2em;
+}
+.two{
+  display: flex;
+  margin: 40px;
+  background-color: rgb(91, 92, 110);
+  height: 600px;
+  overflow: hidden;
+}
+.two_a{
+  padding-left: 40px;
+}
+.two_b{
+  height: 100%;
+  width: 300px;
+  text-align: center;
+  padding-top: 100px;
+  padding-right: 40px;
+  color: #fff;
+}
+.twot{
+  text-align: center;
+  color: rgb(224, 96, 5);
+  font-size: 30PX;
+  margin-bottom: 10PX;
+}
+.three_a{
+  width: 60%;
+  text-align: center;
+  color: #fff;
+  font-size: 24px;
+  text-indent: 2em;
+}
+.three_t{
+  margin-left: 170px;
+  color: blue;
+  font-size: 20px;
+}
+.pp{
+  display: block;
+  margin-left: 100px;
+}
+.qop{
+  text-indent: 2em;
+  color: #fff;
+  font-size: 18px;
+  margin-top: 100px;
+  padding-right: 20px;
+}
+
+@font-face {
+  font-family: 'fzyh';
+  src: url(../text/FZFWZhuZiHeiR.TTF);
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: fzyh;
+}
+
+.wrapper {
+  /* 固定定位 窗口滚动也不会移动 */
+  position: fixed;
+  top: 0;
+  left: 2;
+  width: 100%;
+  height: 100%;
+      z-index: 1999;
+      background: linear-gradient(140deg, #91B493, #6e9c8e);
+  clip-path: circle(25px at calc(45px) 45px);
+  /* 过渡动画 */
+  transition: all 0.3s ease-in-out;
+}
+
+
+
+  .menu-btn {
+      display: none;
+  }
+
+  .key {
+      display: none;
+  }
+
+  .wrapper {
+      display: none;
+  }
+
+  .nav_bar {
+      position: sticky;
+      top: 0;
+      background-color: rgb(255, 255, 255);
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      line-height: 40px;
+      /* 盒子阴影 */
+      border-bottom: 1px solid rgba(212, 212, 212, 0.629);
+
+  }
+
+  .nav_bar nav {
+      display: flex;
+      /* 生成相对定位的元素，相对于其正常位置进行定位。
+      因此，"left:20" 会向元素的 LEFT 位置添加 20 像素。 */
+      position: relative;
+  }
+
+  .nav_bar nav label {
+      flex: 1;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+      /* 鼠标放上变小手 */
+      cursor: pointer;
+  }
+
+  .nav_bar nav label a {
+      position: relative;
+      z-index: -1;
+      color: rgb(105, 105, 105);
+      font-size: 18px;
+      font-weight: bold;
+      /* 没有文本装饰 */
+      text-decoration: none;
+  }
+
+  .nav_bar nav label a i {
+      font-size: 20px;
+  }
+
+  .nav_bar nav input {
+      display: none;
+  }
+
+  .nav_bar nav .tab {
+      position: absolute;
+      height: 100%;
+      width: 25%;
+      left: 0px;
+      bottom: 0px;
+      /* 渐变背景 ,自左到右 */
+      border-radius: 50px;
+      /* 添加动画过渡.贝塞尔曲线 */
+      transition: 0.6s ease;
+  }
+
+  .nav_bar nav #home:checked~label.home a,
+  .nav_bar nav #comment:checked~label.comment a,
+  .nav_bar nav #about:checked~label.about a,
+  .nav_bar nav #search:checked~label.search a {
+      color: rgb(42, 27, 27);
+      /* 这里字体颜色改变需要加个动画过渡 */
+      transition: 0.6s;
+  }
+
+  .nav_bar nav #comment:checked~.tab {
+      left: 25%;
+  }
+
+  .nav_bar nav #about:checked~.tab {
+      left: 50%;
+  }
+
+  .nav_bar nav #search:checked~.tab {
+      left: 75%;
+  }
+
+/* 把复选框隐藏 */
+#menu_btn {
+  display: none;
+}
+
+#menu_btn:checked~.wrapper {
+  /* 将元素剪切为一个圆形 75% 表示圆的半径 */
+  clip-path: circle(75%);
+}
+
+#menu_btn:checked~.menu-btn {
+  color: #91B493;
+  background: #fff;
+}
+
+#menu_btn:checked~.menu-btn i::before {
+  content: "\f00d";
+}
+
+.wrapper ul {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  /* text-align: center; */
+}
+
+.wrapper ul li {
+  text-align: center;
+  margin: 30px 0px;
+}
+
+.wrapper ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: bolder;
+  position: relative;
+  line-height: 80px;
+}
+
+.wrapper ul li a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  z-index: -1;
+  left: 0px;
+}
+
+.wrapper ul li a:hover {
+  color: #bbe9df;
+}
+
+/* 全局变量 */
+:root {
+  --background-color: #91B493;
+  --border-color: rgb(255, 255, 255,0.8);
+}
+
+/* 用于在HTML页面中选择任何和所有类型的元素 */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* 原教程中使用的是第三方库 */
+
+/* 这里使用iconfont.cn的图标导出 */
+
+@font-face {
+  font-family: "iconfont";
+  src: url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAKsAAsAAAAABnAAAAJeAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCCcAp8gRgBNgIkAwgLBgAEIAWEbQcwG74FEdWTB2Q/DuyY8FcY0Z8Dxdjg34Pn37W3+5LMb0qoAFARg6qrQ14wdv8cv+DJEUhAt3rM2ozizqgIRZOMB/9VUzbQw+RyXwLAiMNp87wLZP55l8sYg8aaNKmL4jiQAhxrUWRFEnnD2AUu4TgECCKRfKSppWsIi8EaJ4Bsra/OY3NeDIYlLIKvZqlBbnGw6ky9hJvw+/K7VCwoHI1V0rfSvETdt0I7Re96u0z5BHwgoNUOoIF8wIAM1UZ70Aija4KihlTYV6HAt8zzfAuyVyPC/jorPwSAeCi6J7EruVVuBYCB7pAK1I66DXRQSMjOw92YmAfncSPv7XfvRt+8GX79eujt25FIkBVAPryltjj3cfLjfy+Snz971t7+ol0duO6BOlR+VwU013/AJ6kbh9r99cv15Bq2aDf9HeoA8HYNehcBBCrCyh7Nhlf9t8EGgE8hozuU9LOD3b9N4D+JezYYXWqZlVHFtUlFKvr8ZUEEAR7YGcXXsbrYm0oKlthbsweQkEJjSScaaj4cgimHD0stgsijdXUw0WyjERMI5HIEIETghyKMZ9BE8IpoqF/gEMdf+IgQjSBGJHrLYDJFW1yjojOM1P9pGeRkx2ouKrxhCnunWWnIeEH9EqAyK4qJFid0jhn+M1VmTKxyUANOw74LXSorBstms6vOc657UzbIEbmoUdEZRur/tAxyst/eXOnzN0xh77Slrsb7gvqldyqzogexVZ296u7lFf+ZKjMmVjmoAYOw70JX/aAVg2XziPBV53Yz7qvK1tccX7cDCIosvYrtfmnk8xJ8kCgCAAAA') format('woff2');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 20px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-sousuo:before {
+  content: "\e62e";
+}
+#icon_search{
+  width:30px;
+}
+
+@media screen and (min-width:900px) {
+  .search_btn {
+      display: none;
+  }
+}
+
+@media screen and (max-width:900px) {
+  .search-box {
+
+      width: 40px;
+      height: 40px;
+      background-color: var(--border-color);
+      border-radius: 60px;
+      /* 垂直居中，左右居左 */
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      transition: 0.5s;
+  }
+}
+
+.key {
+  /* flex布局中本区域的缩放比例为1份 */
+  flex-shrink: 1;
+  flex-grow: 1;
+  /* background-color: violet; */
+}
+
+.key input {
+  width: calc(100% - 40px);
+  height: 40px;
+  padding: 0 20px;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(129, 129, 129);
+
+  /* 边框背景为空 */
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.key input:focus {
+  border: none;
+  outline: none;
+}
+
+.key input::-webkit-input-placeholder {
+  /* 提示文字的样式 */
+  color: rgb(184, 184, 184);
+}
+
+.bt {
+  /* flex布局中本区域的缩放比例为0份，不缩放，保持原有大小 */
+  flex-shrink: 0;
+  flex-grow: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  /* 搜索图标居中 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bt a {
+
+  border-radius: 100%;
+  text-decoration: none;
+  color: #91B493;
+  /* background-color: violet; */
+  transition: 0.5s;
+}
+
+.search-box.active {
+  width: 300px;
+}
+
+.search-box.active .bt a {
+  color: #91B493;
+  
+}
+.nav_bar{
+  z-index: 1000;
+}
